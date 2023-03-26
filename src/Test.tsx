@@ -1,6 +1,6 @@
-export function test()
+function test()
 {
-    console.log('TEST');
+    console.log("TEST");
     const product = getProduct(4);
     console.log(`The product ${product.name} costs ${product.price}`);
 
@@ -11,7 +11,7 @@ export function test()
         return `${name}`;
     }
 
-    let gr: string = greeting('Jane');
+    let gr: string = greeting("Jane");
     console.log(gr);
 
     // any type
@@ -49,3 +49,5 @@ person =
     name: "John",
     age: 44
 }
+
+export default test;

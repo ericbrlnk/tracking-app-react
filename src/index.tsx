@@ -2,21 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { test } from './Test';
-
+import { BrowserRouter } from "react-router-dom"
+// Test scripts
+import test from './Test';
+import addWithUnion from './TestUnionType';
+import stringLiterals from './TestStringLiterals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>
+  </BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
 test();
+let result = addWithUnion("4", "1");
+console.log(result);
+stringLiterals();
