@@ -1,9 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 
-export default function Umbuchung() {
+export default function Umbuchung() {    
     return (
         <div>
-            <h1> Umbuchung </h1>
         </div>
     );
 }

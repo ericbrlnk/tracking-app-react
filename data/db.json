@@ -1,0 +1,18 @@
+{
+  "Eingang": [
+    {
+      "trackingNumber": "12345",
+      "status": "eingegangen",
+      "id": 1
+    },
+    {
+      "trackingNumber": "99999",
+      "status": "eingegangen",
+      "id": 2
+    },
+    {
+      "trackingNumber": "123",
+      "id": 3
+    }
+  ]
+}
