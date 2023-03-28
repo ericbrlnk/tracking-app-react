@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import SaveIcon from '@mui/icons-material/Save';
@@ -8,9 +9,10 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
     field: {
-        marginTop: 20,
-        marginBottom: 20,
-        display: "block"
+        color: '#ffffff'
+    },
+    heading: {
+        color: '#ffffff'
     }
 })
 
@@ -40,7 +42,12 @@ export default function Eingang() {
 
     return (
         <div>
-            <h1>Eingang</h1>
+            <Typography
+                className={classes.heading} 
+                variant="h6"
+            >
+                Eingang
+            </Typography>
             <br />
             <form 
                 noValidate
@@ -50,7 +57,7 @@ export default function Eingang() {
                             <Button 
                 onClick={() => console.log('Cancel click')} 
                 variant='outlined' 
-                color='primary'
+                color='secondary'
                 startIcon={<CloseIcon />}
             >
                 Abbrechen
@@ -67,15 +74,21 @@ export default function Eingang() {
                 <h3>Trackingnummer:</h3>
                 <TextField
                     onChange={(e) => setTrackingNumber(e.target.value)}
-                    className={classes.field} 
+                    className={ classes.field } 
                     label='trackingnumber'
                     variant='outlined'
                     error={trackingNumberErr}
+                    sx={{
+                        fieldset: { borderColor: "white" }
+                    }}
                 />
                 <TextField
-                    className={classes.field} 
+                    className={ classes.field } 
                     label='status'
                     variant='outlined'
+                    sx={{
+                        fieldset: { borderColor: "white" }
+                    }}
                 />
             </form>
         </div>

@@ -5,13 +5,16 @@ import Eingang from './pages/Eingang'
 import Umbuchung from './pages/Umbuchung'
 import './App.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import Layout from './components/Layout'
 
 const theme = createTheme({
   palette: {
       primary: {
-          main: "#2C586F"
+          light: '#489FB5',
+          main: '#16697A'
       },
       secondary: {
+          light: '#2076A7',
           main: "#1C3F53"
       }
   },
@@ -28,11 +31,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <Routes>
-          <Route path="/" element={<Home /> } />
-          <Route path="eingang" element={<Eingang />} />
-          <Route path="umbuchung" element={<Umbuchung />} />
-      </Routes>
+      <Layout>
+        <Routes>
+            <Route path="/" element={<Home /> } />
+            <Route path="eingang" element={<Eingang />} />
+            <Route path="umbuchung" element={<Umbuchung />} />
+        </Routes>
+      </Layout>
+
     </div>
     </ThemeProvider>
   );
