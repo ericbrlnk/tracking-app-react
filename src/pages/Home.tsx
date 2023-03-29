@@ -10,18 +10,8 @@ import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
-import { makeStyles } from '@mui/styles';
 import CardTemplate from '../cards/CardTemplate'
 import { Divider } from '@mui/material';
-
-const useStyles = makeStyles({
-    heading: {
-        color: '#ffffff',
-    }, 
-    grid: {
-        spacing: 5
-    }
-})
 
 {/* icons */}
 const IconEdit = () => {
@@ -53,7 +43,6 @@ const IconAdministration = () => {
 };
 
 export default function Home() {
-    const classes = useStyles();
     return (
         <div>
             <Typography
@@ -64,7 +53,7 @@ export default function Home() {
             </Typography>
             <Divider />
             <br />
-            <Grid container className={ classes.grid }>
+            <Grid container>
                 <Grid item xs={12} sm={6} md={3}>
                     <CardTemplate name='Eingang' link='/eingang' cardIcon={ IconPostOffice() } />
                 </Grid>
@@ -80,15 +69,13 @@ export default function Home() {
             </Grid>
             <br />
             <Typography
-                //className={ classes.heading } 
                 variant="h4"
-                gutterBottom
             >
                 Verfolgung
             </Typography>
             <Divider />
             <br />
-            <Grid container className={ classes.grid }>
+            <Grid container>
                 <Grid item xs={12} sm={6} md={3}>
                     <CardTemplate name='Verfolgung' link='/umbuchung' cardIcon={ IconExplore() } />
                 </Grid>
@@ -98,14 +85,13 @@ export default function Home() {
             </Grid>
             <br />
             <Typography
-                //className={ classes.heading } 
                 variant="h4"
             >
                 Administration
             </Typography>
             <Divider />
             <br />
-            <Grid container className={ classes.grid }>
+            <Grid container>
                 <Grid item xs={12} sm={6} md={3}>
                     <CardTemplate name='Administration' link='/umbuchung' cardIcon={ IconAdministration() } />
                 </Grid>                       

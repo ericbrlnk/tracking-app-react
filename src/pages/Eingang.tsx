@@ -6,19 +6,8 @@ import Container from '@mui/material/Container'
 import SaveIcon from '@mui/icons-material/Save';
 import CloseIcon from '@mui/icons-material/Close';
 import TextField from '@mui/material/TextField';
-import { makeStyles } from '@mui/styles';
-
-const useStyles = makeStyles({
-    field: {
-        backgroundColor: '#ffffff'
-    },
-    grid: {
-        spacing: 5
-    }
-})
 
 export default function Eingang() {
-    const classes = useStyles();
     const [trackingNumber, setTrackingNumber] = React.useState('')
     const [trackingNumberErr, setTrackingNumberErr] = React.useState(false)
     const handleSubmit = (e : any) => { 
@@ -41,12 +30,12 @@ export default function Eingang() {
     }
     return (
         <div>
-            <form 
+            <form
                 noValidate
                 autoComplete='false'
                 onSubmit={handleSubmit}
             >
-                <Grid container className={ classes.grid }>
+                <Grid container>
                     <Grid item>
                         <Button 
                             onClick={() => console.log('Cancel click')} 
@@ -69,21 +58,56 @@ export default function Eingang() {
                         </Button>                       
                     </Grid>                         
                 </Grid>
-                <h3>Trackingnummer:</h3>
                 <div>
-                <TextField
-                    id="outlined-error-helper-text"
-                    onChange={(e) => setTrackingNumber(e.target.value)}
-                    className={ classes.field }
-                    label='trackingnumber'
-                    variant='outlined'
-                    error={trackingNumberErr}
-                />
-                <TextField
-                    className={ classes.field } 
-                    label='status'
-                    variant='outlined'
-                />
+                <Grid container>
+                    <Grid item>
+                        <Typography>
+                            Trackingnummer
+                        </Typography>
+                        <TextField
+                            id="outlined-error-helper-text"
+                            onChange={(e) => setTrackingNumber(e.target.value)}
+                            variant='outlined'
+                            error={trackingNumberErr}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <Typography>
+                            Status
+                        </Typography>
+                        <TextField
+                            variant='outlined'
+                        />
+                    </Grid>
+                </Grid>
+                <Grid container>
+                    <Grid item>
+                        <Typography>
+                            Handhabung
+                        </Typography>
+                        <TextField
+                            variant='outlined'
+                        />
+                    </Grid>
+                    <Grid item>
+                        <Typography>
+                            Rutsche 
+                        </Typography>
+                        <TextField
+                            variant='outlined'
+                        />
+                    </Grid>
+                </Grid>
+                <Grid container>
+                    <Grid item>
+                        <Typography>
+                            Lieferschein 
+                        </Typography>
+                        <TextField
+                            variant='outlined'
+                        />
+                    </Grid>
+                </Grid>
                 </div>
             </form>
         </div>

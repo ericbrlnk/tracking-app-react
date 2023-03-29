@@ -24,6 +24,40 @@ const useStyles = makeStyles((theme : Theme) => {
 })
 
 const theme = createTheme({
+    components: {
+        MuiTextField: {
+          styleOverrides: {
+            root: {
+                backgroundColor: '#f1f1f1',
+                marginRight: 30
+            }
+          }
+        },
+        MuiButton: {
+            styleOverrides: {
+              root: {
+                  marginRight: 20,
+                  marginTop: 50
+              }
+            }
+        },
+        MuiTypography: {
+            styleOverrides: {
+              root: {
+                marginTop: 5,
+                marginBottom: 5
+              }
+            }
+        },
+        MuiGrid: {
+            styleOverrides: {
+              root: {
+                  marginTop: 10,
+                  marginBottom: 10
+              }
+            }
+        }
+    },
     palette: {
         primary: {
             light: '#489FB5',
@@ -35,13 +69,13 @@ const theme = createTheme({
         }
     },
     typography: {
-      fontFamily: "Quicksand",
-      fontWeightLight: 300,
-      fontWeightRegular: 400,
-      fontWeightMedium: 600,
-      fontWeightBold: 700,
+        fontFamily: 'Quicksand',
+        fontWeightLight: 300,
+        fontWeightRegular: 400,
+        fontWeightMedium: 600,
+        fontWeightBold: 700,
     }
-  })
+})
 
 export function Layout( { children } : any ) {    
     const classes = useStyles();
