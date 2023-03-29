@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Umbuchung() {    
+export default function Zustellung() {    
     return (
         <div>
         </div>

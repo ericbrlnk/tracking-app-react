@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { Theme } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
+import { Theme, createTheme } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 import { Typography } from '@mui/material';
 
 const useStyles = makeStyles((theme : Theme) => {
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme : Theme) => {
     },
     page: {
         //backgroundColor: '#106066',
-        backgroundColor: '#82C0CC',
+        backgroundColor: '#a4d5d3',
         width: '100%',
         padding: 50
     },
@@ -23,7 +23,27 @@ const useStyles = makeStyles((theme : Theme) => {
     }
 })
 
-export default function Layout( { children } : any ) {    
+const theme = createTheme({
+    palette: {
+        primary: {
+            light: '#489FB5',
+            main: '#16697A'
+        },
+        secondary: {
+            light: '#2076A7',
+            main: '#1C3F53'
+        }
+    },
+    typography: {
+      fontFamily: "Quicksand",
+      fontWeightLight: 300,
+      fontWeightRegular: 400,
+      fontWeightMedium: 600,
+      fontWeightBold: 700,
+    }
+  })
+
+export function Layout( { children } : any ) {    
     const classes = useStyles();
     return (
         <div className={ classes.root }>
@@ -34,9 +54,7 @@ export default function Layout( { children } : any ) {
                         ICSTrack
                     </Typography>
                 </Toolbar>
-
             </AppBar>
-
             {/* Children components */}
             <div className={ classes.page }>
                 {/* Shift the contents down */}
@@ -46,3 +64,5 @@ export default function Layout( { children } : any ) {
         </div>
     );
 }
+
+export default theme;

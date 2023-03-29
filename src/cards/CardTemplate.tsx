@@ -18,6 +18,9 @@ const CardTemplate = (props : any) => {
                         title={ name }
                     >
                     </CardHeader>
+                    <Typography variant="body2">
+                        { cardIcon }
+                    </Typography>
                 </CardContent>
             </CardActionArea>
         </Card>
