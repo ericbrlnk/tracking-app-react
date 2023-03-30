@@ -73,7 +73,17 @@ const NavigationBar = (props : any) => {
                                 > 
                                     Zustellung
                                 </Button>                                                       
-                            </Grid>                              
+                            </Grid>
+                            <Grid item>
+                                <Button
+                                    onClick={() => console.log('Test 2 click')} 
+                                    variant='contained'
+                                    sx={{width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light'}}}
+                                    //endIcon={<SaveIcon />}
+                                > 
+                                    Abholung
+                                </Button>                                                       
+                            </Grid>                                
                 </Grid>
             </Toolbar>
       </AppBar>
