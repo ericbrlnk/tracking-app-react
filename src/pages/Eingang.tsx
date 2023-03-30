@@ -6,6 +6,7 @@ import Container from '@mui/material/Container'
 import SaveIcon from '@mui/icons-material/Save';
 import CloseIcon from '@mui/icons-material/Close';
 import TextField from '@mui/material/TextField';
+import NavigationBar from '../components/NavigationBar';
 
 export default function Eingang() {
     const [trackingNumber, setTrackingNumber] = React.useState('')
@@ -30,6 +31,7 @@ export default function Eingang() {
     }
     return (
         <div>
+            <NavigationBar></NavigationBar>
             <form
                 noValidate
                 autoComplete='false'
@@ -40,7 +42,7 @@ export default function Eingang() {
                         <Button 
                             onClick={() => console.log('Cancel click')} 
                             variant='outlined' 
-                            color='secondary'
+                            color='primary'
                             startIcon={<CloseIcon />}
                         >
                             Abbrechen

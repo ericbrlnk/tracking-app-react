@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Container } from '@mui/material'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import EditIcon from '@mui/icons-material/Edit';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
@@ -13,87 +12,60 @@ import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 import CardTemplate from '../cards/CardTemplate'
 import { Divider } from '@mui/material';
 
-{/* icons */}
-const IconEdit = () => {
-    return <EditIcon fontSize='large' />;
-};
-
-const IconPostOffice = () => {
-    return <LocalPostOfficeIcon fontSize='large' />;
-};
-
-const IconShipping = () => {
-    return <LocalShippingIcon fontSize='large' />;
-};
-
-const IconReceipt = () => {
-    return <ReceiptLongIcon fontSize='large' />;
-};
-
-const IconExplore = () => {
-    return <TravelExploreIcon fontSize='large' />;
-};
-
-const IconChecklist = () => {
-    return <FactCheckIcon fontSize='large' />;
-};
-
-const IconAdministration = () => {
-    return <SettingsApplicationsIcon fontSize='large' />;
-};
-
 export default function Home() {
     return (
         <div>
             <Typography
-                //className={ classes.heading } 
-                variant="h4"
+                variant="h4" 
+                ml={5}
             >
                 Arbeitsablauf
             </Typography>
             <Divider />
             <br />
             <Grid container>
-                <Grid item xs={12} sm={6} md={3}>
-                    <CardTemplate name='Eingang' link='/eingang' cardIcon={ IconPostOffice() } />
+                <Grid item xs={12} sm={6} md={2.5}>
+                    <CardTemplate name='Eingang' link='/eingang' cardIcon={ <LocalPostOfficeIcon fontSize='large' /> } />
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                    <CardTemplate name='Umbuchung' link='/umbuchung' cardIcon={ IconEdit() } />
+                <Grid item xs={12} sm={6} md={2.5}>
+                    <CardTemplate name='Umbuchung' link='/umbuchung' cardIcon={ <EditIcon fontSize='large' /> } />
                 </Grid> 
-                <Grid item xs={12} sm={6} md={3}>
-                    <CardTemplate name='Zustellung' link='/umbuchung' cardIcon={ IconShipping() } />
+                <Grid item xs={12} sm={6} md={2.5}>
+                    <CardTemplate name='Zustellung' link='/umbuchung' cardIcon={ <LocalShippingIcon fontSize='large' /> } />
                 </Grid> 
-                <Grid item xs={12} sm={6} md={3}>
-                    <CardTemplate name='Abholung' link='/umbuchung' cardIcon={ IconReceipt() } />
+                <Grid item xs={12} sm={6} md={2.5}>
+                    <CardTemplate name='Abholung' link='/umbuchung' cardIcon={ <ReceiptLongIcon fontSize='large' /> } />
                 </Grid>                         
             </Grid>
             <br />
             <Typography
                 variant="h4"
+                ml={5}
             >
                 Verfolgung
             </Typography>
             <Divider />
             <br />
             <Grid container>
-                <Grid item xs={12} sm={6} md={3}>
-                    <CardTemplate name='Verfolgung' link='/umbuchung' cardIcon={ IconExplore() } />
+                <Grid item xs={12} sm={6} md={2.5}>
+                    <CardTemplate name='Verfolgung' link='/umbuchung' cardIcon={ <TravelExploreIcon fontSize='large' /> } />
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                    <CardTemplate name='Rollliste' link='/umbuchung' cardIcon={ IconChecklist() } />
+                <Grid item xs={12} sm={6} md={2.5}>
+                    <CardTemplate name='Rollliste' link='/umbuchung' cardIcon={ <FactCheckIcon fontSize='large' /> } />
                 </Grid>                         
             </Grid>
             <br />
             <Typography
                 variant="h4"
+                ml={5}
             >
                 Administration
             </Typography>
             <Divider />
             <br />
             <Grid container>
-                <Grid item xs={12} sm={6} md={3}>
-                    <CardTemplate name='Administration' link='/umbuchung' cardIcon={ IconAdministration() } />
+                <Grid item xs={12} sm={6} md={2.5}>
+                    <CardTemplate name='Administration' link='/umbuchung' cardIcon={ <SettingsApplicationsIcon fontSize='large' /> } />
                 </Grid>                       
             </Grid>
         </div>
