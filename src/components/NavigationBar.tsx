@@ -2,11 +2,9 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Grid from '@mui/material/Grid'
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { makeStyles } from '@mui/styles';
-import { Theme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom'
+import HomeIcon from '@mui/icons-material/Home';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import EditIcon from '@mui/icons-material/Edit';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
@@ -15,20 +13,27 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 
-const useStyles = makeStyles((theme : Theme) => {
-    return {
-        navBar: { backgroundColor: theme.palette.secondary.light }
-}
-})
+// custom style for navigation bar
+import './styles.css';
 
 const NavigationBar = () => {
-    const classes = useStyles();
+    // using react router for navigation
     const navigate = useNavigate();
 
     return (
-      <AppBar position="static">
-        <Toolbar className = {classes.navBar} variant='dense'>
-            <Grid container sx={{ mt: -5, ml: -3 }} >
+      <AppBar position='fixed' sx={{ mt: 8}}>
+        <Toolbar className = "navBar">
+            <Grid container sx={{ mt: -5, ml: -3}}>
+                <Grid item>
+                    <Button
+                        onClick={() => navigate('/')}
+                        variant='contained'
+                        sx={{width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light'}}} 
+                        startIcon={<HomeIcon />}
+                    >
+                        Home
+                    </Button>
+                </Grid>
                 <Grid item>
                     <Button
                         onClick={() => navigate('/eingang')}

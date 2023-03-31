@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import Eingang from './pages/Eingang'
-import Umbuchung from './pages/Umbuchung'
+import Inbox from './pages/Inbox'
+import OrderChange from './pages/OrderChange'
 import './App.css';
 import { ThemeProvider } from '@mui/material/styles'
 import { Layout } from './components/Layout'
@@ -15,8 +15,8 @@ function App() {
       <Layout>
         <Routes>
             <Route path="/" element={<Home /> } />
-            <Route path="eingang" element={<Eingang />} />
-            <Route path="umbuchung" element={<Umbuchung />} />
+            <Route path="inbox" element={<Inbox />} />
+            <Route path="orderchange" element={<OrderChange />} />
         </Routes>
       </Layout>
     </div>

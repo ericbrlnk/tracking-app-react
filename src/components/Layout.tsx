@@ -1,28 +1,13 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@mui/styles';
+import React from 'react';
 import { Theme, createTheme } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { Typography } from '@mui/material';
-import NavigationBar from './NavigationBar';
 
-const useStyles = makeStyles((theme : Theme) => {
-    return {
-    root: {
-        //display: 'flex'
-    },
-    page: {
-        //backgroundColor: '#106066',
-        backgroundColor: '#a4d5d3',
-        width: '100%',
-        //padding: 50
-    },
-    appbar: {
-    },
-    toolbar: theme.mixins.toolbar
-}
-})
+// styles used for main page and other children
+import './styles.css';
 
+// theme create for spacing of particular MUI-Components and properties of palette/typography
 const theme = createTheme({
     components: {
         MuiTextField: {
@@ -61,7 +46,6 @@ const theme = createTheme({
         MuiToolbar: {
             styleOverrides: {
                 root: {
-                    //backgroundColor: '#2076A7'
                 }
               }
         }
@@ -89,11 +73,10 @@ const theme = createTheme({
 })
 
 export function Layout( { children } : any ) {    
-    const classes = useStyles();
     return (
-        <div className={ classes.root }>
+        <div className="root">
             {/* Main bar */}
-            <AppBar className={ classes.appbar }>               
+            <AppBar className="appbar">               
                 <Toolbar>
                     <Typography>
                         ICSTrack
@@ -101,9 +84,9 @@ export function Layout( { children } : any ) {
                 </Toolbar>    
             </AppBar>
             {/* Children components */}
-            <div className={ classes.page }>
+            <div className="page">
             {/* Shift the contents down */}
-            <div className={ classes.toolbar }></div>
+            <div className="toolbar"></div>
                 { children }
             </div>
         </div>

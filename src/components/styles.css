@@ -1,0 +1,21 @@
+.root {
+    display: 'flex';
+}
+
+.page {
+    background-color: #a4d5d3;
+    width: '100%';
+    padding: 20;
+}
+
+.appbar {
+    padding: 0;
+}
+
+.toolbar {
+    height: 100px;
+}
+
+.navBar {
+    background-color: #bbc5c5
+}

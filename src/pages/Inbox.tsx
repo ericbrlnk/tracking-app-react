@@ -1,17 +1,20 @@
-import * as React from 'react'
-import Typography from '@mui/material/Typography'
-import Grid from '@mui/material/Grid'
-import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
+import * as React from 'react';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import SaveIcon from '@mui/icons-material/Save';
 import CloseIcon from '@mui/icons-material/Close';
 import TextField from '@mui/material/TextField';
 import NavigationBar from '../components/NavigationBar';
+import { createEndPoint, ENDPOINTS } from '../api'
 
-export default function Eingang() {
+export default function Inbox() {
+    
     const [trackingNumber, setTrackingNumber] = React.useState('')
     const [trackingNumberErr, setTrackingNumberErr] = React.useState(false)
+
     const handleSubmit = (e : any) => { 
+        // prevent reloading the page
         e.preventDefault();
         setTrackingNumberErr(false);
 
@@ -20,13 +23,22 @@ export default function Eingang() {
             setTrackingNumberErr(true);
         }
 
+        const  data = { trackingnumber: trackingNumber };
+
         if (trackingNumber) {
-            // console.log(trackingNumber);
+            createEndPoint(ENDPOINTS.inbox)
+                .post(data)
+                .then(res => console.log(res))
+                .catch(err => console.log(err));
+
+            {/*}
             fetch('http://localhost:4000/eingang', {
                 method: 'POST',
                 headers: {'Content-type': 'application/json'},
                 body: JSON.stringify( { trackingNumber })
             })
+            */}
+
         }
     }
     return (
