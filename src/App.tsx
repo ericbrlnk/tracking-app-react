@@ -10,13 +10,13 @@ import theme from './components/Layout';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-    <div className="App">
+    <ThemeProvider theme={ theme }>
+    <div className='App'>
       <Layout>
         <Routes>
-            <Route path="/" element={<Home /> } />
-            <Route path="inbox" element={<Inbox />} />
-            <Route path="orderchange" element={<OrderChange />} />
+            <Route path='/' element={ <Home /> } />
+            <Route path='inbox' element={ <Inbox /> } />
+            <Route path='orderchange' element={ <OrderChange /> } />
         </Routes>
       </Layout>
     </div>

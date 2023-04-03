@@ -22,8 +22,6 @@ export default function Inbox() {
 
     const [kep, setKEP] = React.useState('');
 
-    let helpertext = '';
-
     const handleChange = (event: SelectChangeEvent) => {
         setKEP(event.target.value);
     };
@@ -59,26 +57,24 @@ export default function Inbox() {
             <form
                 noValidate
                 autoComplete='false'
-                onSubmit={handleSubmit}
+                onSubmit={ handleSubmit }
             >
                 <Grid container>
                     <Grid item>
                         <Button 
-                            onClick={() => console.log('Cancel click')} 
                             variant='outlined' 
                             color='primary'
-                            startIcon={<CloseIcon />}
+                            startIcon={ <CloseIcon /> }
                         >
                             Abbrechen
                         </Button>
                     </Grid>
                     <Grid item>
                         <Button
-                            onClick={() => console.log('Save click')} 
                             type='submit'
                             variant='contained'
                             color='primary'
-                            endIcon={<SaveIcon />}
+                            endIcon={ <SaveIcon /> }
                         > 
                             Speichern 
                         </Button>                       
@@ -91,8 +87,8 @@ export default function Inbox() {
                             Trackingnummer
                         </Typography>
                         <TextField
-                            id="outlined-error-helper-text"
-                            onChange={(e) => setTrackingNumber(e.target.value)}
+                            id='outlined-error-helper-text'
+                            onChange={ (e) => setTrackingNumber(e.target.value) }
                             variant='outlined'
                             error={ trackingNumberErr }
                         />
@@ -103,7 +99,7 @@ export default function Inbox() {
                         </Typography>
                         <TextField
                             variant='outlined'
-                            onChange={(e) => setStatus(e.target.value)}
+                            onChange={ (e) => setStatus(e.target.value) }
                         />
                     </Grid>
                 </Grid>
@@ -114,12 +110,12 @@ export default function Inbox() {
                         </Typography>
                         <Select
                             variant='filled'
-                            value={kep}
-                            label="KEP-DL"
-                            onChange={handleChange}
-                            sx={{width: 200}}
+                            value={ kep }
+                            label='KEP-DL'
+                            onChange={ handleChange }
+                            sx={{ width: 200 }}
                             >
-                            <MenuItem value="DHL">
+                            <MenuItem value='DHL'>
                                 <em>DHL</em>
                             </MenuItem>
                             <MenuItem value={ 'Hermes' }>Hermes</MenuItem>
@@ -134,7 +130,7 @@ export default function Inbox() {
                         </Typography>
                         <TextField
                             variant='outlined'
-                            onChange={(e) => setHandling(e.target.value)}
+                            onChange={ (e) => setHandling(e.target.value) }
                         />
                     </Grid>
                     <Grid item>
@@ -143,7 +139,7 @@ export default function Inbox() {
                         </Typography>
                         <TextField
                             variant='outlined'
-                            onChange={(e) => setDelay(e.target.value)}
+                            onChange={ (e) => setDelay(e.target.value) }
                         />
                     </Grid>
                 </Grid>
@@ -154,7 +150,7 @@ export default function Inbox() {
                         </Typography>
                         <TextField
                             variant='outlined'
-                            onChange={(e) => setDispatchNote(e.target.value)}
+                            onChange={ (e) => setDispatchNote(e.target.value) }
                         />
                     </Grid>
                 </Grid>

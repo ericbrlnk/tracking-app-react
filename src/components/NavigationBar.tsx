@@ -21,14 +21,14 @@ const NavigationBar = () => {
     const navigate = useNavigate();
 
     return (
-      <AppBar position='fixed' sx={{ mt: 8}}>
+      <AppBar position='fixed' sx={{ mt: 8 }}>
         <Toolbar className = "navBar">
-            <Grid container sx={{ mt: -5, ml: -3}}>
+            <Grid container sx={{ mt: -5, ml: -3 }}>
                 <Grid item>
                     <Button
-                        onClick={() => navigate('/')}
+                        onClick={ () => navigate('/') }
                         variant='contained'
-                        sx={{width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light'}}} 
+                        sx={{ width: '100%', bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.light' } }} 
                         startIcon={<HomeIcon />}
                     >
                         Home
@@ -36,40 +36,40 @@ const NavigationBar = () => {
                 </Grid>
                 <Grid item>
                     <Button
-                        onClick={() => navigate('/eingang')}
+                        onClick={ () => navigate('/inbox') }
                         variant='contained'
-                        sx={{width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light'}}} 
-                        startIcon={<LocalPostOfficeIcon />}
+                        sx={{ width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light'}}} 
+                        startIcon={ <LocalPostOfficeIcon /> }
                     >
                         Eingang
                     </Button>
                 </Grid>
                 <Grid item>
                     <Button
-                        onClick={() => navigate('/umbuchung')}
+                        onClick={ () => navigate('/orderchange') }
                         variant='contained'
-                        sx={{width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light'}}}
-                        startIcon={<EditIcon />}
+                        sx={{ width: '100%', bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.light' } }}
+                        startIcon={ <EditIcon /> }
                     > 
                         Umbuchung
                     </Button>                                                       
                 </Grid>
                 <Grid item>
                     <Button
-                        onClick={() => navigate('/zustellung')}
+                        onClick={ () => navigate('/delivery') }
                         variant='contained'
-                        sx={{width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light'}}}
-                        startIcon={<LocalShippingIcon />}
+                        sx={{ width: '100%', bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.light' } }}
+                        startIcon={ <LocalShippingIcon /> }
                     > 
                         Zustellung
                     </Button>                                                       
                 </Grid>
                 <Grid item>
                     <Button
-                        onClick={() => console.log('Test 2 click')} 
+                        onClick={ () => navigate('/pickup') }
                         variant='contained'
-                        sx={{width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light'}}}
-                        startIcon={<ReceiptLongIcon />}
+                        sx={{ width: '100%', bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.light' } }}
+                        startIcon={ <ReceiptLongIcon /> }
                     > 
                         Abholung
                     </Button>                                                       

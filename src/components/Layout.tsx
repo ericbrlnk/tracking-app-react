@@ -72,7 +72,7 @@ const theme = createTheme({
     }
 })
 
-export function Layout( { children } : any ) {    
+export function Layout({ children } : any) {    
     return (
         <div className="root">
             {/* Main bar */}

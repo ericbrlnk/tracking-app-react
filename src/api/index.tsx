@@ -14,7 +14,7 @@ export const createEndPoint = (endpoint: any) =>  {
         fetch: () => axios.get(url),
         fetchById: (id: any) => axios.get(url + id),
         post: (newRecord: any) => axios.post(url, newRecord),
-        put: (id: any , updatedRecord: any) => axios.put(url + id, updatedRecord),
+        put: (id: any, updatedRecord: any) => axios.put(url + id, updatedRecord),
         delete: (id: any) => axios.delete(url + id)
     }
 }
