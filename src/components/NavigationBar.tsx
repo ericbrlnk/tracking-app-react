@@ -38,7 +38,7 @@ const NavigationBar = () => {
                     <Button
                         onClick={ () => navigate('/inbox') }
                         variant='contained'
-                        sx={{ width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light'}}} 
+                        sx={{ width: '100%', bgcolor: 'primary.main', '&:hover': {bgcolor: 'primary.light' }}} 
                         startIcon={ <LocalPostOfficeIcon /> }
                     >
                         Eingang

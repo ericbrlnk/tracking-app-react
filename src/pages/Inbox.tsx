@@ -27,7 +27,7 @@ export default function Inbox() {
     const [kepErr, setKEPErr] = React.useState(false);
     const [errorTextKEP, setErrorTextKEP] = React.useState('');
 
-    const handleSubmit = (e : any) => { 
+    const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
         // prevent reloading the page
         e.preventDefault();
         setTrackingNumberErr(false);

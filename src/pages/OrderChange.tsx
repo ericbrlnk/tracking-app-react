@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import NavigationBar from '../components/NavigationBar';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-
+import Button from '@mui/material/Button';
+import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField';
 import ButtonContainer from '../components/ButtonContainer';
+import IconButton from '@mui/material/IconButton';
 
 export default function OrderChange() {    
+    const [readOnly, setReadOnly] = React.useState(true);
+
+    const handleClick = (e: MouseEvent) => {
+        setReadOnly(!readOnly);
+    }
+
     return (
         <div>
             <NavigationBar></NavigationBar>
@@ -24,9 +32,7 @@ export default function OrderChange() {
                         </Typography>
                         <TextField
                             id='outlined-error-helper-text'
-                            // onChange={ (e) => setTrackingNumber(e.target.value) }
                             variant='outlined'
-                            // error={ trackingNumberErr }
                         />
                     </Grid>
                     <Grid item>
@@ -35,8 +41,19 @@ export default function OrderChange() {
                         </Typography>
                         <TextField
                             variant='outlined'
-                            // onChange={ (e) => setStatus(e.target.value) }
+                            inputProps={{ 
+                                readOnly: Boolean(readOnly)
+                            }}
                         />
+                        <IconButton 
+                            aria-label='edit' 
+                            size="small"
+                            sx={{ ml: -2, mt: 1 }}
+                            onClick={ handleClick }
+                        >
+
+                            <EditIcon />
+                        </IconButton>
                     </Grid>
                 </Grid>
                 <Grid container>
