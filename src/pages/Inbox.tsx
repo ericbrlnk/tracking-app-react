@@ -84,7 +84,7 @@ export default function Inbox() {
                                 onChange={ (e) => setTrackingNumber(e.target.value) }
                                 variant='outlined'
                             />
-                            <FormHelperText error= { trackingNumberErr } > { errorTextTNr } </FormHelperText>
+                            <FormHelperText error= { trackingNumberErr }> { errorTextTNr } </FormHelperText>
                         </ FormControl>
                     </Grid>
                     <Grid item>
