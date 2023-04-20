@@ -8,13 +8,13 @@ export const ENDPOINTS = {
 // this component is used to set an endpoint (server) based on the given url
 // it also defines methods for fetching, posting etc., which realize certain HTTP-requests
 
-export const createEndPoint = (endpoint: any) =>  {
+export const createEndPoint = (endpoint: string) =>  {
     var url = SERVER_URL + 'api/' + endpoint + '/';
     return {
         fetch: () => axios.get(url),
-        fetchById: (id: any) => axios.get(url + id),
-        post: (newRecord: any) => axios.post(url, newRecord),
-        put: (id: any, updatedRecord: any) => axios.put(url + id, updatedRecord),
-        delete: (id: any) => axios.delete(url + id)
+        fetchById: (id: number) => axios.get(url + id),
+        post: (newRecord: object) => axios.post(url, newRecord),
+        put: (id: number, updatedRecord: object) => axios.put(url + id, updatedRecord),
+        delete: (id: number) => axios.delete(url + id)
     }
 }

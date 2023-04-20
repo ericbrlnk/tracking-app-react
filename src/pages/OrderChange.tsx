@@ -7,6 +7,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField';
 import ButtonContainer from '../components/ButtonContainer';
 import IconButton from '@mui/material/IconButton';
+import Container from '@mui/material/Container';
 
 export default function OrderChange() {    
     const [readOnly, setReadOnly] = React.useState(true);
@@ -17,60 +18,63 @@ export default function OrderChange() {
 
     return (
         <div>
-            <NavigationBar></NavigationBar>
-            <form
-                noValidate
-                autoComplete='false'
-                // onSubmit={ handleSubmit }
-            >
-                <ButtonContainer></ButtonContainer>   
-                <div>
-                <Grid container>
-                    <Grid item>
-                        <Typography>
-                            ID *
-                        </Typography>
-                        <TextField
-                            id='outlined-error-helper-text'
-                            variant='outlined'
-                        />
-                    </Grid>
-                    <Grid item>
-                        <Typography>
-                            Trackingnummer
-                        </Typography>
-                        <TextField
-                            variant='outlined'
-                            inputProps={{ 
-                                readOnly: Boolean(readOnly)
-                            }}
-                        />
-                        <IconButton 
-                            aria-label='edit' 
-                            size="small"
-                            sx={{ ml: -2, mt: 1 }}
-                            onClick={ handleClick }
-                        >
+            <NavigationBar />
+            <Container sx={{ marginLeft: 1 }}>
+                <form
+                    noValidate
+                    autoComplete='false'
+                    // onSubmit={ handleSubmit }
+                >
+                    <ButtonContainer></ButtonContainer>   
+                    <div>
+                    <Grid container>
+                        <Grid item>
+                            <Typography>
+                                ID *
+                            </Typography>
+                            <TextField
+                                id='outlined-error-helper-text'
+                                variant='outlined'
+                            />
+                        </Grid>
+                        <Grid item>
+                            <Typography>
+                                Trackingnummer
+                            </Typography>
+                            <TextField
+                                variant='outlined'
+                                inputProps={{ 
+                                    readOnly: Boolean(readOnly)
+                                }}
+                                sx={{ bgcolor: (Boolean(readOnly)) ? 'secondary.light' : null }}
+                            />
+                            <IconButton 
+                                aria-label='edit' 
+                                size="small"
+                                sx={{ ml: -2, mt: 1 }}
+                                onClick={ handleClick }
+                            >
 
-                            <EditIcon />
-                        </IconButton>
+                                <EditIcon />
+                            </IconButton>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid container>
-                </Grid>
-                <Grid container>
-                    <Grid item>
-                        <Typography>
-                            Container ID *
-                        </Typography>
-                        <TextField
-                            variant='outlined'
-                            // onChange={ (e) => setHandling(e.target.value) }
-                        />
+                    <Grid container>
                     </Grid>
-                </Grid>
-                </div>
-            </form>
+                    <Grid container>
+                        <Grid item>
+                            <Typography>
+                                Container ID *
+                            </Typography>
+                            <TextField
+                                variant='outlined'
+                                // onChange={ (e) => setHandling(e.target.value) }
+                            />
+                        </Grid>
+                    </Grid>
+                    </div>
+                </form>
+            </Container>
         </div>
     );
 }

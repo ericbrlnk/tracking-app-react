@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ButtonContainer from '../components/ButtonContainer';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
+import { Container } from '@mui/material';
 
 export default function Inbox() {
 
@@ -65,94 +66,96 @@ export default function Inbox() {
     }
     return (
         <div>
-            <NavigationBar></NavigationBar>
-            <form
-                noValidate
-                autoComplete='false'
-                onSubmit={ handleSubmit }
-            >
-                <ButtonContainer></ButtonContainer>                
-                <div>
-                <Grid container>
-                    <Grid item>
-                        <Typography>
-                            Trackingnummer *
-                        </Typography>
-                        <FormControl>
+            <NavigationBar />
+            <Container sx={{ marginLeft: 1 }}>
+                <form
+                    noValidate
+                    autoComplete='false'
+                    onSubmit={ handleSubmit }
+                >
+                    <ButtonContainer></ButtonContainer>                
+                    <div>
+                    <Grid container>
+                        <Grid item>
+                            <Typography>
+                                Trackingnummer *
+                            </Typography>
+                            <FormControl>
+                                <TextField
+                                    id='outlined-error-helper-text'
+                                    onChange={ (e) => setTrackingNumber(e.target.value) }
+                                    variant='outlined'
+                                />
+                                <FormHelperText error= { trackingNumberErr }> { errorTextTNr } </FormHelperText>
+                            </ FormControl>
+                        </Grid>
+                        <Grid item>
+                            <Typography>
+                                Status
+                            </Typography>
                             <TextField
-                                id='outlined-error-helper-text'
-                                onChange={ (e) => setTrackingNumber(e.target.value) }
                                 variant='outlined'
+                                onChange={ (e) => setStatus(e.target.value) }
                             />
-                            <FormHelperText error= { trackingNumberErr }> { errorTextTNr } </FormHelperText>
-                        </ FormControl>
+                        </Grid>
                     </Grid>
-                    <Grid item>
-                        <Typography>
-                            Status
-                        </Typography>
-                        <TextField
-                            variant='outlined'
-                            onChange={ (e) => setStatus(e.target.value) }
-                        />
+                    <Grid container>
+                        <Grid item>
+                            <Typography>
+                                KEP-DL *
+                            </Typography>
+                            <FormControl>
+                                <Select
+                                    variant='filled'
+                                    value={ kep }
+                                    label='KEP-DL'
+                                    onChange={ (e) => setKEP(e.target.value) }
+                                    sx={{ width: 200, bgcolor: '#f1f1f1' }}
+                                    >
+                                    <MenuItem value='DHL'>
+                                        <em>DHL</em>
+                                    </MenuItem>
+                                    <MenuItem value={ 'Hermes' }>Hermes</MenuItem>
+                                    <MenuItem value={ 'Deutsche Post' }>Deutsche Post</MenuItem>
+                                </Select>
+                                <FormHelperText error={ kepErr }> { errorTextKEP } </FormHelperText>
+                            </FormControl>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid container>
-                    <Grid item>
-                        <Typography>
-                            KEP-DL *
-                        </Typography>
-                        <FormControl>
-                            <Select
-                                variant='filled'
-                                value={ kep }
-                                label='KEP-DL'
-                                onChange={ (e) => setKEP(e.target.value) }
-                                sx={{ width: 200, bgcolor: '#f1f1f1' }}
-                                >
-                                <MenuItem value='DHL'>
-                                    <em>DHL</em>
-                                </MenuItem>
-                                <MenuItem value={ 'Hermes' }>Hermes</MenuItem>
-                                <MenuItem value={ 'Deutsche Post' }>Deutsche Post</MenuItem>
-                            </Select>
-                            <FormHelperText error={ kepErr }> { errorTextKEP } </FormHelperText>
-                        </FormControl>
+                    <Grid container>
+                        <Grid item>
+                            <Typography>
+                                Handhabung
+                            </Typography>
+                            <TextField
+                                variant='outlined'
+                                onChange={ (e) => setHandling(e.target.value) }
+                            />
+                        </Grid>
+                        <Grid item>
+                            <Typography>
+                                Rutsche 
+                            </Typography>
+                            <TextField
+                                variant='outlined'
+                                onChange={ (e) => setDelay(e.target.value) }
+                            />
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid container>
-                    <Grid item>
-                        <Typography>
-                            Handhabung
-                        </Typography>
-                        <TextField
-                            variant='outlined'
-                            onChange={ (e) => setHandling(e.target.value) }
-                        />
+                    <Grid container>
+                        <Grid item>
+                            <Typography>
+                                Lieferschein 
+                            </Typography>
+                            <TextField
+                                variant='outlined'
+                                onChange={ (e) => setDispatchNote(e.target.value) }
+                            />
+                        </Grid>
                     </Grid>
-                    <Grid item>
-                        <Typography>
-                            Rutsche 
-                        </Typography>
-                        <TextField
-                            variant='outlined'
-                            onChange={ (e) => setDelay(e.target.value) }
-                        />
-                    </Grid>
-                </Grid>
-                <Grid container>
-                    <Grid item>
-                        <Typography>
-                            Lieferschein 
-                        </Typography>
-                        <TextField
-                            variant='outlined'
-                            onChange={ (e) => setDispatchNote(e.target.value) }
-                        />
-                    </Grid>
-                </Grid>
-                </div>
-            </form>
+                    </div>
+                </form>
+            </Container>
         </div>
     );
 }

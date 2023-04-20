@@ -7,6 +7,10 @@ import './App.css';
 import { ThemeProvider } from '@mui/material/styles'
 import { Layout } from './components/Layout'
 import theme from './components/Layout';
+import Delivery from './pages/Delivery';
+import Pickup from './pages/Pickup';
+import Administration from './pages/Administration';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -17,6 +21,10 @@ function App() {
             <Route path='/' element={ <Home /> } />
             <Route path='inbox' element={ <Inbox /> } />
             <Route path='orderchange' element={ <OrderChange /> } />
+            <Route path='delivery' element={ <Delivery /> } />
+            <Route path='pickup' element={ <Pickup /> } />
+            <Route path='administration' element={ <Administration /> } />
+            <Route path='login' element={ <LoginPage /> } />
         </Routes>
       </Layout>
     </div>

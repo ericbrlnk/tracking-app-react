@@ -13,21 +13,25 @@ import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
+import LoginIcon from '@mui/icons-material/Login';
 
 // custom style for navigation bar
 import './styles.css';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
 
 const NavigationBar = () => {
     // using react router for navigation
     const navigate = useNavigate();
     const currentLocation = useLocation();
     
-    var sites: { [key: string]: string} = {
+    var sites: { [key: string]: string } = {
         'home': '/',
         'inbox': '/inbox',
         'orderchange': '/orderchange',
         'delivery': '/delivery',
-        'pickup': '/pickup'
+        'pickup': '/pickup',
+        'login': '/login'
     }
 
     return (
@@ -89,6 +93,12 @@ const NavigationBar = () => {
                     </Button>                                                       
                 </Grid>                                              
             </Grid>
+            <Box>
+                <IconButton onClick={ () => navigate(sites['login']) } sx={{ mr: 1,  p: 0 }}>
+                    <LoginIcon sx={{ mr: 1,  p: 0 }}></LoginIcon>
+                    login
+                </IconButton>
+            </Box>
         </Toolbar>
     </AppBar>
   );

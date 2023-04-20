@@ -29,7 +29,7 @@ const theme = createTheme({
         MuiTypography: {
             styleOverrides: {
               root: {
-                marginTop: 10,
+                marginTop: 3,
                 marginBottom: 10,
               }
             }
