@@ -9,9 +9,24 @@ import Container from '@mui/material/Container';
 import { Link  } from 'react-router-dom';
 
 export default function Register() {
+    
+    const [name, setName] = React.useState('');
+    const [surname, setSurname] = React.useState('');  
+    const [email, setEmail] = React.useState('');
+    const [pwd, setPwd] = React.useState('');    
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
+        if (name && surname && email && pwd)
+        {
+            // save data in local storage
+            localStorage.setItem("name", name);
+            localStorage.setItem("surname", surname);
+            localStorage.setItem("email", email);
+            localStorage.setItem("pwd", pwd);
+            alert("Account created");
+            window.location.reload();
+        }
     };
   
     return (
@@ -30,7 +45,7 @@ export default function Register() {
                 </Grid>
                 <Grid item>
                     <Typography variant="h5">
-                        Register
+                        Registrieren
                     </Typography>
                 </Grid>
             </Grid>
@@ -41,6 +56,8 @@ export default function Register() {
                         Vorname
                     </Typography>
                     <TextField
+                        value={ name }
+                        onChange={ (e) => setName(e.target.value) }
                         autoComplete="given-name"
                         name="firstName"
                         required
@@ -54,6 +71,8 @@ export default function Register() {
                         Nachname
                     </Typography>
                     <TextField
+                        value={ surname }
+                        onChange={ (e) => setSurname(e.target.value) }
                         required
                         fullWidth
                         id="lastName"
@@ -66,6 +85,8 @@ export default function Register() {
                         Email
                     </Typography>
                     <TextField
+                        value={ email }
+                        onChange={ (e) => setEmail(e.target.value) }
                         required
                         fullWidth
                         id="email"
@@ -78,6 +99,8 @@ export default function Register() {
                         Passwort
                     </Typography>
                     <TextField
+                        value={ pwd }
+                        onChange={ (e) => setPwd(e.target.value) }
                         required
                         fullWidth
                         name="pwd"
@@ -92,7 +115,7 @@ export default function Register() {
                 variant="contained"
                 sx={{ ml: 6, mt: 3, mb: 2 }}
               >
-                Sign Up
+                Registrieren
               </Button>
               <Grid container justifyContent="flex-end">
             </Grid>

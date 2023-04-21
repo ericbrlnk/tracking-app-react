@@ -11,12 +11,30 @@ export default function Login() {
     const [email, setEmail] = React.useState('');
     const [pwd, setPwd] = React.useState('');
 
-
+    const storedEmail = localStorage.getItem("email");
+    const storedPwd = localStorage.getItem("pwd");
     
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // Login Handler
+    const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
+        
+        if (email === storedEmail && pwd === storedPwd)
+        {
+            localStorage.setItem("currentUser", email);
+            alert("User logged-in");
+            window.location.reload();
+        }
+        else
+        {
+            alert("Incorrect data");
+        }
     };
+
+    // Logout Handler
+    const HandleLogout = () => {
+        localStorage.removeItem("currentUser");
+        window.location.reload();
+    }
   
     return (
         <Container component='main' maxWidth='xs' sx={{ marginLeft: 1 }}>
@@ -34,11 +52,11 @@ export default function Login() {
                 </Grid>
                 <Grid item>
                     <Typography variant='h5'>
-                        Log in
+                        Anmelden
                     </Typography>
                 </Grid>
             </Grid>
-            <Box component='form' noValidate onSubmit={ handleSubmit }>
+            <Box component='form' noValidate onSubmit={ handleLogin }>
               <Grid container spacing={ 1 }>
                 <Grid item xs={ 12 }>
                     <Typography>
@@ -46,6 +64,7 @@ export default function Login() {
                     </Typography>
                     <TextField
                         value={ email }
+                        onChange={ (e) => setEmail(e.target.value)}
                         required
                         fullWidth
                         id='email'
@@ -59,6 +78,7 @@ export default function Login() {
                     </Typography>
                     <TextField
                         value={ pwd }
+                        onChange={ (e) => { setPwd(e.target.value) }}
                         required
                         fullWidth
                         name='pwd'
@@ -73,15 +93,15 @@ export default function Login() {
                 variant='contained'
                 sx={{ ml: 6, mt: 3, mb: 2 }}
               >
-                Log in
+                Anmelden
               </Button>
               <Button
-                type='submit'
+                onClick={ () => HandleLogout() }
                 fullWidth
                 variant='outlined'
                 sx={{ ml: 6, mt: 1, mb: 2 }}
               >
-                Log out
+                Abmelden
               </Button>
             </Box>
           </Box>

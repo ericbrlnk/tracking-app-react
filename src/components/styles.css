@@ -3,9 +3,10 @@
 }
 
 .page {
-    background-color: #a4d5d3;
+    /*background-color: #a4d5d3;*/
     height: 100vh;
     width: 100vw;
+    background-image: linear-gradient(80deg, #a4d5d3, #429c98, 60%, #0b4945);
 }
 
 .appbar {

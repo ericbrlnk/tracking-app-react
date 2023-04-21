@@ -19,6 +19,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import './styles.css';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 
 const NavigationBar = () => {
     // using react router for navigation
@@ -94,9 +95,16 @@ const NavigationBar = () => {
                 </Grid>                                              
             </Grid>
             <Box>
+                <Typography color={'secondary.dark'} sx={{ m: 2 }}>
+                        { localStorage.getItem("currentUser") } 
+                </Typography>
+            </Box>
+            <Box>
                 <IconButton onClick={ () => navigate(sites['login']) } sx={{ mr: 1,  p: 0 }}>
                     <LoginIcon sx={{ mr: 1,  p: 0 }}></LoginIcon>
-                    login
+                    <Typography color={'secondary.dark'} sx={{ m: 1 }}>
+                        login
+                    </Typography>
                 </IconButton>
             </Box>
         </Toolbar>
