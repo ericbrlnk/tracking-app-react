@@ -20,11 +20,11 @@ export default function Register() {
         if (name && surname && email && pwd)
         {
             // save data in local storage
-            localStorage.setItem("name", name);
-            localStorage.setItem("surname", surname);
-            localStorage.setItem("email", email);
-            localStorage.setItem("pwd", pwd);
-            alert("Account created");
+            localStorage.setItem('name', name);
+            localStorage.setItem('surname', surname);
+            localStorage.setItem('email', email);
+            localStorage.setItem('pwd', pwd);
+            alert('Account created');
             window.location.reload();
         }
     };
@@ -44,12 +44,12 @@ export default function Register() {
                     </Avatar>
                 </Grid>
                 <Grid item>
-                    <Typography variant="h5">
+                    <Typography variant='h5'>
                         Registrieren
                     </Typography>
                 </Grid>
             </Grid>
-            <Box component="form" noValidate onSubmit={ handleSubmit }>
+            <Box component='form' noValidate onSubmit={ handleSubmit }>
               <Grid container spacing={ 1 }>
                 <Grid item xs={ 12 } sm={ 6 }>
                     <Typography>
@@ -58,11 +58,11 @@ export default function Register() {
                     <TextField
                         value={ name }
                         onChange={ (e) => setName(e.target.value) }
-                        autoComplete="given-name"
-                        name="firstName"
+                        autoComplete='given-name'
+                        name='firstName'
                         required
                         fullWidth
-                        id="firstName"
+                        id='firstName'
                         autoFocus
                     />
                 </Grid>
@@ -75,9 +75,9 @@ export default function Register() {
                         onChange={ (e) => setSurname(e.target.value) }
                         required
                         fullWidth
-                        id="lastName"
-                        name="lastName"
-                        autoComplete="family-name"
+                        id='lastName'
+                        name='lastName'
+                        autoComplete='family-name'
                     />
                 </Grid>
                 <Grid item xs={ 12 }>
@@ -89,9 +89,9 @@ export default function Register() {
                         onChange={ (e) => setEmail(e.target.value) }
                         required
                         fullWidth
-                        id="email"
-                        name="email"
-                        autoComplete="email"
+                        id='email'
+                        name='email'
+                        autoComplete='email'
                     />
                 </Grid>
                 <Grid item xs={ 12 }>
@@ -103,21 +103,21 @@ export default function Register() {
                         onChange={ (e) => setPwd(e.target.value) }
                         required
                         fullWidth
-                        name="pwd"
-                        type="password"
-                        id="password"
+                        name='pwd'
+                        type='password'
+                        id='password'
                     />
                 </Grid>
               </Grid>
               <Button
-                type="submit"
+                type='reset'
                 fullWidth
-                variant="contained"
+                variant='contained'
                 sx={{ ml: 6, mt: 3, mb: 2 }}
               >
                 Registrieren
               </Button>
-              <Grid container justifyContent="flex-end">
+              <Grid container justifyContent='flex-end'>
             </Grid>
             </Box>
           </Box>

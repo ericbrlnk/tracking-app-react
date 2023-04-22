@@ -2,7 +2,7 @@ import React from 'react';
 import { Theme, createTheme } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 // styles used for main page and other children
 import './styles.css';
@@ -59,7 +59,7 @@ const theme = createTheme({
         secondary: {
             light: '#C8CCD6',
             main: '#A8AAB1',
-            dark: '#606265'
+            dark: '#3F4144'
 
         }
     },

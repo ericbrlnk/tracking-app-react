@@ -11,8 +11,8 @@ export default function Login() {
     const [email, setEmail] = React.useState('');
     const [pwd, setPwd] = React.useState('');
 
-    const storedEmail = localStorage.getItem("email");
-    const storedPwd = localStorage.getItem("pwd");
+    const storedEmail = localStorage.getItem('email');
+    const storedPwd = localStorage.getItem('pwd');
     
     // Login Handler
     const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,19 +20,19 @@ export default function Login() {
         
         if (email === storedEmail && pwd === storedPwd)
         {
-            localStorage.setItem("currentUser", email);
-            alert("User logged-in");
+            localStorage.setItem('currentUser', email);
+            alert('User logged-in');
             window.location.reload();
         }
         else
         {
-            alert("Incorrect data");
+            alert('Incorrect data');
         }
     };
 
     // Logout Handler
     const HandleLogout = () => {
-        localStorage.removeItem("currentUser");
+        localStorage.removeItem('currentUser');
         window.location.reload();
     }
   

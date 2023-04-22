@@ -48,7 +48,7 @@ export default function Home() {
                 <br />
                 <Grid container>
                     <Grid item xs={ 12 } sm={ 6 } md={ 2.5 }>
-                        <CardTemplate name='Verfolgung' link='/' cardIcon={ <TravelExploreIcon fontSize='large' /> } />
+                        <CardTemplate name='Verfolgung' link='/tracking' cardIcon={ <TravelExploreIcon fontSize='large' /> } />
                     </Grid>
                     <Grid item xs={ 12 } sm={ 6 } md={ 2.5 }>
                         <CardTemplate name='Rollliste' link='/' cardIcon={ <FactCheckIcon fontSize='large' /> } />

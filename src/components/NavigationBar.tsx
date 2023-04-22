@@ -96,13 +96,13 @@ const NavigationBar = () => {
             </Grid>
             <Box>
                 <Typography color={'secondary.dark'} sx={{ m: 2 }}>
-                        { localStorage.getItem("currentUser") } 
+                        { localStorage.getItem('currentUser') } 
                 </Typography>
             </Box>
             <Box>
                 <IconButton onClick={ () => navigate(sites['login']) } sx={{ mr: 1,  p: 0 }}>
                     <LoginIcon sx={{ mr: 1,  p: 0 }}></LoginIcon>
-                    <Typography color={'secondary.dark'} sx={{ m: 1 }}>
+                    <Typography color={ 'secondary.dark' } sx={{ m: 1 }}>
                         login
                     </Typography>
                 </IconButton>
